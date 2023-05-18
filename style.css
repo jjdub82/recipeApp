@@ -25,6 +25,7 @@ section{
 section p, h1{
     color: white
 }
+
 form{
   
     max-width: 600px;
@@ -61,7 +62,7 @@ form button{
     display: grid;
     margin-top: 2rem;
     grid-gap: 2rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     /* grid-template: auto /repeat(auto-fit, minmax(200px, 1fr)); */
     
 }
@@ -83,18 +84,22 @@ form button{
    
 }
 
-.flex-container{
-    display:flex;
+.flex-wrapper {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 2rem;
-   
-}
-
+  }
+  .flex-wrapper .column-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
 .item title{
     color:whitesmoke;
     margin: 20px 10px 0 0;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 400
 }
 .view-button{
@@ -113,9 +118,9 @@ form button{
     color:whitesmoke;
     display:block;
     margin-top: 10px;
-    font-size: 1.4rem;
-    letter-spacing: .45rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    letter-spacing: .35rem;
+    line-height: 1rem;
 }
 
 .pagination-container{
