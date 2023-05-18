@@ -44,12 +44,12 @@ fetch(apiUrl)
     
 
     const col1 =document.createElement('div')
-    col1.className = 'col-md-4';
+    col1.className = 'col-md-6';
     col1.style.outline = '1px solid lightgray';
     
 
     const col2 =document.createElement('div')
-    col2.className = 'col-md-6';
+    col2.className = 'col-md-4';
     col2.style.outline = '1px solid lightgray';
    
   
@@ -61,7 +61,7 @@ fetch(apiUrl)
         col1.appendChild(img);
 
       const recipeLabel = document.createElement('h1');
-      recipeLabel.className = 'display-1';
+      recipeLabel.className = 'display-1 recipe-label';
       recipeLabel.textContent = recipe.label
       col1.appendChild(recipeLabel);
 
@@ -92,10 +92,20 @@ fetch(apiUrl)
       health.textContent = recipe.healthLabels;
       col2.appendChild(health)
 
-      const indgredients = document.createElement('p');
-      indgredients.className = 'item-data mt-3';
-      indgredients.textContent = recipe.ingredientLines;
-      row2.appendChild(indgredients);
+      const recipeURI = document.createElement('p');
+      recipeURI.className = 'recipe-uri'
+      recipeURI.style.display = 'none';
+      col2.appendChild(recipeURI);
+
+      const ingredeientHeading = document.createElement('h1');
+      ingredeientHeading.className = 'display-3';
+      ingredeientHeading.textContent = 'Ingredients';
+      row2.appendChild(ingredeientHeading);
+
+      // const indgredients = document.createElement('p');
+      // indgredients.className = 'item-data mt-3';
+      // indgredients.textContent = recipe.ingredientLines;
+      // row2.appendChild(indgredients);
       
       const ingredientLines = recipe.ingredientLines;
       if (ingredientLines.length > 0) {
@@ -110,7 +120,26 @@ fetch(apiUrl)
         emptyElement.textContent = 'No ingredients found.';
         row2.appendChild(emptyElement);
       }
-
+      const macroHeader = document.createElement('h1');
+      macroHeader.className = 'display-3 mt-3';
+      macroHeader.textContent = 'Macros';
+      row2.appendChild(macroHeader);
+      
+      const digest = recipe.digest.filter(item => {
+        // Specify the conditions to include the elements
+        // For example, let's include only the elements with labels "Fat" and "Carbs"
+        return item.label === "Fat" || item.label === "Carbs" || item.label === "Protein";
+      });
+  
+      digest.forEach(item => {
+        const p = document.createElement("p");
+        p.className = "item-data mt-2 pt-2";
+        const totalPerServing = Math.round(item.total / recipe.yield);
+        p.textContent = `${item.label}: ${totalPerServing}`;
+        row2.appendChild(p);
+      });
+      
+    
       
 
 
@@ -125,3 +154,6 @@ fetch(apiUrl)
     console.error('Error:', error);
   });
 
+
+
+  

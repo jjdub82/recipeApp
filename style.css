@@ -121,6 +121,8 @@ form button{
     font-size: 1rem;
     letter-spacing: .35rem;
     line-height: 1rem;
+    word-wrap: break-word; /* Allow word wrapping within the element */
+    overflow: hidden; /* Hide any overflowing content */
 }
 
 .pagination-container{
