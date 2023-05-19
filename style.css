@@ -47,8 +47,6 @@ form input{
     
 }
 
-
-
 form button{
   
     padding-top: 15px;
@@ -62,7 +60,7 @@ form button{
     display: grid;
     margin-top: 2rem;
     grid-gap: 2rem;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     /* grid-template: auto /repeat(auto-fit, minmax(200px, 1fr)); */
     
 }

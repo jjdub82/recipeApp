@@ -82,6 +82,13 @@ fetch(apiUrl)
       mealType.textContent = recipe.mealType;
       col2.appendChild(mealType);
 
+      const cuisineType = document.createElement('p');
+      cuisineType.className = 'item-data';
+      cuisineType.textContent = recipe.cuisineType;
+      col2.appendChild(cuisineType)
+
+
+
       const dietLabels = document.createElement('p');
       dietLabels.className = 'item-data';
       dietLabels.textContent = recipe.dietLabels;
@@ -91,6 +98,13 @@ fetch(apiUrl)
       health.className = 'item-data';
       health.textContent = recipe.healthLabels;
       col2.appendChild(health)
+
+      const recipeLink = document.createElement('a');
+      recipeLink.className = 'btn btn-success btn-lg';
+      recipeLink.textContent = 'Link to Recipe';
+      recipeLink.href = recipe.url;
+      col2.appendChild(recipeLink);
+
 
       const recipeURI = document.createElement('p');
       recipeURI.className = 'recipe-uri'
@@ -124,7 +138,7 @@ fetch(apiUrl)
       macroHeader.className = 'display-3 mt-3';
       macroHeader.textContent = 'Macros';
       row2.appendChild(macroHeader);
-      
+
       const digest = recipe.digest.filter(item => {
         // Specify the conditions to include the elements
         // For example, let's include only the elements with labels "Fat" and "Carbs"
