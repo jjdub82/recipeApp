@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+*{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+html{
+    font-family: 'Raleway';
+    font-size: 12px;
+   
+}
+body{
+    background-color: rgb(30, 39, 59);
+}
+section{
+    min-width: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+
+}
+section p, h1{
+    color: white
+}
+
+form{
+  
+    max-width: 600px;
+    margin: 20px auto;
+    background-color:rgb(20, 186, 125);
+    display:flex;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 2rem
+}
+form input{
+    padding: 10px;
+    border:1px solid lightgray;
+    outline:none;
+    background-color: white;
+    font-size: 2rem;
+ 
+    display: inline-block;
+    
+}
+
+form button{
+  
+    padding-top: 15px;
+    font-size: 3rem;
+  
+    background-color: transparent;
+    color:rgb(103, 139, 170)
+}
+
+.search-result{
+    display: grid;
+    margin-top: 2rem;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template: auto /repeat(auto-fit, minmax(200px, 1fr)); */
+    
+}
+
+.item{
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    background-color: rgba(20, 55, 61, 0.809);
+    padding: 2rem;
+    overflow:hidden;
+    box-shadow: 5px 10px 25px -3px #DEEACC;
+    
+}
+
+.item img {
+ 
+    border-radius: 4px;
+   
+}
+
+.flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  .flex-wrapper .column-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+.item title{
+    color:whitesmoke;
+    margin: 20px 10px 0 0;
+    font-size: 1.4rem;
+    font-weight: 400
+}
+.view-button{
+    text-decoration: none;
+    text-align: center;
+    width: 130px;
+    padding: 10px ;
+    color: whitesmoke;
+    background-color:rgb(88, 93, 145);
+    border-radius: 6px;
+    margin-top: 4rem;
+    font-size: 1.3rem;
+}
+
+.item-data{
+    color:whitesmoke;
+    display:block;
+    margin-top: 10px;
+    font-size: 1rem;
+    letter-spacing: .35rem;
+    line-height: 1rem;
+    word-wrap: break-word; /* Allow word wrapping within the element */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+.pagination-container{
+    display: flex;
+    justify-content: center;
+}
