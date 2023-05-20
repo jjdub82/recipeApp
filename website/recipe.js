@@ -184,5 +184,15 @@ fetch(apiUrl)
     .catch(error => console.error('Error:', error));
 });
 
+document.getElementById('navSearchBtn').addEventListener('click', function(){
+  let qText = document.getElementById('navSearchTxt').value
+  // console.log(qText)
+  
+  link = `search.html?q=${qText}`
+  window.location.href = link
+
+
+
+} )
 
   
