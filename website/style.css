@@ -127,3 +127,15 @@ form button{
     display: flex;
     justify-content: center;
 }
+
+.list-group{
+    width: 60%;
+    margin-top: 3rem;
+    padding: 10px;
+   
+}
+
+.list-group-item{
+    background-color: transparent;
+    font-size: 1.5rem;
+}

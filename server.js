@@ -11,8 +11,36 @@ app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 app.use(express.static('website'));
 
+//add item get request
 app.get('/add/:favtitle/:favuri', addFavorite);
 
+//Delete Item Script
+app.delete('/delete/:uri', (req,res) => {
+    const uriToDelete = req.params.uri;
+
+    fs.readFile('favorites.json', 'utf8', (err, data)=>{
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error reading favorites file');
+            return;
+        }
+
+        let favorites = JSON.parse(data);
+        favorites = favorites.filter(favorite => favorite.uri !== uriToDelete);
+
+        fs.writeFile('favorites.json', JSON.stringify(favorites), (err) =>{
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error writing to favorites file');
+                return;
+            }
+            res.status(200).send('Item has been deleted!');
+        });
+    });
+
+});
+
+//Add Item Script
 function addFavorite(request,response){
     let data = request.params;
 
@@ -37,7 +65,7 @@ function addFavorite(request,response){
 
     response.send(reply)
 }
-
+//Read All Request
 app.get('/all', sendAll);
 function sendAll(req, res) {
     res.send(favorites);

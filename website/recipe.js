@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const recipeId = urlParams.get('recipeId');
+console.log(recipeId)
 const recipeTitle = urlParams.get('recipe_label')
 const app_id = 'a3d1dcf8';
 const app_key = 'b638b6abb916f1a4882edc001a786986';
